@@ -1,0 +1,16 @@
+PRACTICA: Calculadora con memoria compartida (SHM) - VERSION 2: una sola memoria compartida entre el padre y todos los procesos
+
+Archivos:
+  padre.c           proceso maestro: pide a y b, crea la memoria compartida, lanza a los hijos
+  suma.c resta.c multiplicacion.c division.c modulo.c   un programa por operacion
+  comun.h           estructura(s) de la memoria compartida y constantes
+  compilar.sh       compila todo
+  monitorear.sh     monitorea procesos y memoria compartida (ps + ipcs -m)
+
+Uso (en dos terminales, dentro de esta carpeta):
+  chmod +x compilar.sh monitorear.sh
+  ./compilar.sh
+  Terminal 1:  ./padre            (escribe dos enteros, por ejemplo: 12 5)
+  Terminal 2:  ./monitorear.sh <PID que imprime el padre>
+
+Cada hijo se queda vivo 30 segundos (ESPERA en comun.h) para dar tiempo de monitorear.
